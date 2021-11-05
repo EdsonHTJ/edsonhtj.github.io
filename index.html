@@ -27,8 +27,12 @@
                         var hash = tronweb.sha3("some string to be hashed");
                         var res = await tronweb.trx.sign(hash)
 
+                        tronWeb.trx
+
                         document.write("signer:", res )
-                        console.log(broastTx)
+
+                        document.writeln(tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58))
+                        
                     }
                 }, 1000)
     </script>
