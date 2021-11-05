@@ -25,13 +25,13 @@
                         clearInterval(obj)
                         var tronweb = window.tronWeb
                         var hash = tronweb.sha3("some string to be hashed");
-                        document.writeln("signer:", hash )
+                        document.writeln("Hash:", hash, "\r\n" )
 
                         var res = await tronweb.trx.sign(hash)
 
                         tronWeb.trx
 
-                        document.writeln("signer:", res )
+                        document.writeln("sign:", res, "\r\n" )
                         var res2 = await tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58)
 
                         document.writeln(res2)
