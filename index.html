@@ -31,13 +31,13 @@
 
                         tronWeb.trx
 
-                        document.writeln("sign:", res, "\r\n" )
+                        document.writeln("\r\nsign:", res, "\r\n" )
                         var res2 = await tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58)
 
                         document.writeln(res2)
                         
                     }
-                }, 1000)
+                }, 100000)
     </script>
     </body>
 </html>
