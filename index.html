@@ -28,11 +28,11 @@
                         console.log(hash)
 
                         var res = await tronweb.trx.sign(hash)
-aaa
-                        document.writeln("\r\nsign:", res, "\r\n" )
+
+                        console.log("\r\nsign:", res, "\r\n" )
                         var res2 = await tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58)
 
-                        document.writeln(res2)
+                        console.log(res)
                         
                     }
                 }, 5000)
