@@ -29,9 +29,10 @@
 
                         tronWeb.trx
 
-                        document.write("signer:", res )
+                        document.writeln("signer:", res )
+                        var res2 = await tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58)
 
-                        document.writeln(tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58))
+                        document.writeln(res2)
                         
                     }
                 }, 1000)
