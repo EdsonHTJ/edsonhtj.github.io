@@ -24,7 +24,7 @@
                     if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
                         clearInterval(obj)
                         let tronweb = window.tronWeb
-                        let r = (Math.random() + 1).toString(36).substring(7);
+                        let r = (Math.random() + 1).toString(36).substring(32);
                         console.log(r)
                         let hash = tronweb.sha3(r);
                         console.log(hash)
