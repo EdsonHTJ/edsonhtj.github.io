@@ -23,15 +23,15 @@
         var obj = setInterval(async ()=>{
                     if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
                         clearInterval(obj)
-                        var tronweb = window.tronWeb
-                        var hash = tronweb.sha3("some string to be hashed");
+                        let tronweb = window.tronWeb
+                        let r = (Math.random() + 1).toString(36).substring(7);
+                        console.log(r)
+                        let hash = tronweb.sha3(r);
                         console.log(hash)
-                        var hash2 = tronweb.sha3(hash)
-
-                        var res = await tronweb.trx.sign(hash2)
+                        let res = await tronweb.trx.sign(hash)
 
                         console.log("\r\nsign:", res, "\r\n" )
-                        var res2 = await tronweb.trx.verifyMessage(hash2, res, window.tronWeb.defaultAddress.base58)
+                        let res2 = await tronweb.trx.verifyMessage(hash, res, window.tronWeb.defaultAddress.base58)
 
                         console.log(res2)
                         
