@@ -14,7 +14,9 @@
                 document.write("Yes, catch it:",window.tronWeb.defaultAddress.base58)
 
                 var hash = window.tronWeb.sha3("some string to be hashed");
-                await window.tronWeb.sing(hash)
+                var res = await window.tronWeb.sing(hash)
+
+                document.write("signer:", res )
 
             }
 
