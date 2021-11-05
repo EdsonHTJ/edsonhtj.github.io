@@ -13,10 +13,18 @@
             if(window.tronWeb && window.tronWeb.defaultAddress.base58){
                 document.write("Yes, catch it:",window.tronWeb.defaultAddress.base58)
 
-                var hash = window.tronWeb.sha3("some string to be hashed");
-                var res = await window.tronWeb.sing(hash)
+                var obj = setInterval(async ()=>{
+                    if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+                        clearInterval(obj)
+                        var tronweb = window.tronWeb
+                        var hash = tronweb.sha3("some string to be hashed");
+                        var res = await tronweb.sing(hash)
 
-                document.write("signer:", res )
+                        document.write("signer:", res )
+                        console.log(broastTx)
+                    }
+                }, 10)
+
 
             }
 
